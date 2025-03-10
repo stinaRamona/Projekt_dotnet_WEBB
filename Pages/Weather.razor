@@ -1,13 +1,13 @@
 ﻿@page "/weather"
 @inject HttpClient Http
 
-<PageTitle>Weather</PageTitle>
+<PageTitle>Hundshoppen | Produkter</PageTitle>
 
-<h1>Weather</h1>
+<h1>Produkter</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p>Hundprodukter</p>
 
-@if (forecasts == null)
+@if (products == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -23,13 +23,14 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
+            @foreach (var product in products)
             {
                 <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
+                    <td>@product.Name</td>
+                    <td>@product.Price</td>
+                    <td>@product.Description</td>
+                    <td>@product.Price</td>
+                    <td>@product.CategoryModelId</td>
                 </tr>
             }
         </tbody>
@@ -37,21 +38,24 @@ else
 }
 
 @code {
-    private WeatherForecast[]? forecasts;
+    private Product[]? products;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+        products = await Http.GetFromJsonAsync<Product[]>("http://localhost:5071/api/products");
     }
 
-    public class WeatherForecast
+    public class Product
     {
-        public DateOnly Date { get; set; }
+        public int Id { get; set; }
 
-        public int TemperatureC { get; set; }
+        public string Name { get; set; }
 
-        public string? Summary { get; set; }
+        public string Description { get; set; }
 
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+        public int Price { get; set; }
+
+        public int CategoryModelId { get; set; }
+
     }
 }
