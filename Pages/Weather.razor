@@ -13,28 +13,16 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th aria-label="Temperature in Celsius">Temp. (C)</th>
-                <th aria-label="Temperature in Farenheit">Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
             @foreach (var product in products)
             {
-                <tr>
-                    <td>@product.Name</td>
-                    <td>@product.Price</td>
-                    <td>@product.Description</td>
-                    <td>@product.Price</td>
-                    <td>@product.CategoryModelId</td>
-                </tr>
+                <article>
+                    <h3>@product.Name</h3>
+                    <img src="/images/@product.ImageName" alt=@product.ImageName>
+                    <p>@product.Price</p>
+                    <p>@product.Description</p>
+                    <p>@product.CategoryModelId</p>
+                </article>
             }
-        </tbody>
-    </table>
 }
 
 @code {
@@ -49,11 +37,13 @@ else
     {
         public int Id { get; set; }
 
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         public int Price { get; set; }
+
+        public string? ImageName { get; set;}
 
         public int CategoryModelId { get; set; }
 
