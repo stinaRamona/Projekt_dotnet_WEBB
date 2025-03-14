@@ -7,23 +7,29 @@
 
 <p>Hundprodukter</p>
 
-@if (products == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-            @foreach (var product in products)
-            {
-                <article>
-                    <h3>@product.Name</h3>
-                    <img src="/images/@product.ImageName" alt=@product.ImageName>
-                    <p>@product.Price</p>
-                    <p>@product.Description</p>
-                    <p>@product.CategoryModelId</p>
-                </article>
-            }
-}
+<div id="productContainer">
+    @if (products == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+                @foreach (var product in products)
+                {
+                    
+                        <article class="productItem">
+                            <img src="/images/@product.ImageName" alt=@product.ImageName>
+                            <NavLink class="nav-link" href="product">
+                                <h3>@product.Name</h3>
+                            </NavLink>
+                            <p>@product.Price kr</p>
+                            <p>@product.Description</p>
+                            <p>@product.CategoryModelId</p>
+                        </article>
+                    
+                }
+    }
+</div
 
 @code {
     private Product[]? products;

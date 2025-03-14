@@ -75,3 +75,14 @@ main {
         padding-right: 1.5rem !important;
     }
 }
+
+#productDiv {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.productItem {
+    padding: 1em; 
+}
