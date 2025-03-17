@@ -1,0 +1,17 @@
+@page "/confirmation"
+@inject CartService CartService
+@using Projekt_dotnet_WEBB.Shared
+
+<PageTitle>Orderbekräftelse</PageTitle>
+
+<h1>Tack för din order!</h1>
+
+<h2>Dina varor</h2>
+<ul>
+    @foreach(var item in CartService.GetCartItems())
+{
+    <li>@item.Name - @item.Price kr</li>
+}
+</ul>
+
+<p>Kopia på bekräftelse och information om leverans skickas till din mail</p>
