@@ -1,0 +1,27 @@
+@page "/cartitems"
+@inject CartService CartService
+
+<PageTitle>Varukorg</PageTitle>
+
+<h1>Din varukort</h1>
+
+@if(CartService.GetCartItems().Count == 0) 
+{
+    <p>Din varukorg är tom</p>
+} else 
+{
+    <ul>
+        @foreach(var item in CartService.GetCartItems())
+        {
+            <li>@item.Name - @item.Price kr</li>
+        }
+    </ul>
+    <button @onclick="ClearCart">Töm varukorgen</button>
+}
+
+@code {
+    private void ClearCart() 
+    {
+        CartService.ClearCart(); 
+    }
+}

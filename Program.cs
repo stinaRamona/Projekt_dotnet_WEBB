@@ -8,4 +8,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
+// lägger till CartService så den kan nås från hela appen
+builder.Services.AddSingleton<CartService>();
+
 await builder.Build().RunAsync();
