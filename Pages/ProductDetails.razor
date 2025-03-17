@@ -1,0 +1,44 @@
+@page "/product/{productId:int}"
+@inject HttpClient Http
+
+<PageTitle>Produktdetaljer</PageTitle>
+
+
+@if(product == null) {
+    <p><em>Loading...</em></p>
+} else {
+    <div id="singleProductContainer">
+        <h2>@product.Name</h2>
+        <img src="/images/@product.ImageName" alt=@product.ImageName>
+        <p>@product.Price</p>
+        <p>@product.Description</p>
+        <p>Kategori: @product.CategoryModelId</p>
+        <button>Lägg i varukorg</button>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public int productId { get; set; }
+
+    private Product? product; 
+
+    protected override async Task OnInitializedAsync() {
+        product = await Http.GetFromJsonAsync<Product>($"http://localhost:5071/api/products/{productId}");
+    }
+
+    public class Product 
+    {
+        public int Id { get; set; }
+
+        public string? Name { get; set; }
+
+        public string? Description { get; set; }
+
+        public int Price { get; set; }
+
+        public string? ImageName { get; set; }
+
+        public int CategoryModelId { get; set; }
+    }
+}

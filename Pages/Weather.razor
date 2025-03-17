@@ -19,7 +19,7 @@
                     
                         <article class="productItem">
                             <img src="/images/@product.ImageName" alt=@product.ImageName>
-                            <NavLink class="nav-link" href="product">
+                            <NavLink class="nav-link" href=@($"product/{product.Id}")>
                                 <h3>@product.Name</h3>
                             </NavLink>
                             <p>@product.Price kr</p>
