@@ -1,5 +1,45 @@
 @page "/checkout"
+@inject CartService CartService
 
 <PageTitle>Kassan</PageTitle>
 
-<h1>Kassan</h1>
+<h1>Kassan</h1> 
+
+<h2>Din order:</h2>
+@foreach(var item in CartService.GetCartItems())
+{
+    <p>@item.Name - @item.Price kr</p>
+}
+
+<h2>Dina uppgifter:</h2>
+<form>
+    <label for="FirstName">Förnamn</label><br>
+    <input type="text" id="FirstName" name="FirstName" required><br>
+
+    <label for="LastName">Efternamn</label><br>
+    <input type="text" id="LastName" name="LastName" required><br>
+
+    <label for="Email">E-post</label><br>
+    <input type="email" id="Email" name="Email" required><br>
+
+    <label for="Adress">Adress:</label><br>
+    <input type="text"><br>
+
+    <label for="ZipCode">Postnummer:</label><br>
+    <input type="text"><br>
+
+    <label for="City">Stad:</label><br>
+    <input type="text"><br>
+
+    <label for="payment">Betalningsmetod:</label>
+    <select id="payment" name="payment">
+        <option value="card">Kort</option>
+        <option value="swish">Swish</option>
+        <option value="invoice">Faktura</option>
+    </select><br>
+
+
+
+</form>
+
+<button>Köp</button>
