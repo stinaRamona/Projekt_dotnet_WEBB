@@ -48,11 +48,6 @@
         collapseNavMenu = !collapseNavMenu;
     }
 
-    protected override void OnParametersSet()
-    {
-        Console.WriteLine($"Base Relative Path: {NavigationManager.ToBaseRelativePath(NavigationManager.Uri)}");
-    }
-
     private void HandleLocationChanged(object? sender, LocationChangedEventArgs e)
     {
         StateHasChanged(); //får det att ladda om så att header_image_container visas eller inte
