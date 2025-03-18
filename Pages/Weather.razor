@@ -5,8 +5,6 @@
 
 <h1>Produkter</h1>
 
-<p>Hundprodukter</p>
-
 <div id="productContainer">
     @if (products == null)
     {
@@ -17,15 +15,15 @@
                 @foreach (var product in products)
                 {
                     
-                        <article class="productItem">
+                        <div class="productItem">
                             <img src="/images/@product.ImageName" alt=@product.ImageName>
-                            <NavLink class="nav-link" href=@($"product/{product.Id}")>
+                            <NavLink class="nav-link-product" href=@($"product/{product.Id}")>
                                 <h3>@product.Name</h3>
                             </NavLink>
                             <p>@product.Price kr</p>
                             <p>@product.Description</p>
                             <p>@product.Category</p>
-                        </article>
+                        </div>
                     
                 }
     }
