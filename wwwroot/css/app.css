@@ -124,7 +124,7 @@ form select {
 
 
 /*Knappar för att tömma varukorg och gå till kassa m.m.*/
-#clearBtn, #addToCartBtn, #checkoutBtn {
+#clearBtn, #addToCartBtn, #checkoutBtn, #goToStoreBtn {
     background-color: #78290F; 
     color: #FFECD1; 
     padding: 0.75em; 
@@ -142,4 +142,28 @@ form select {
     border: none; 
     font-size: 1em; 
     cursor: pointer; 
+}
+
+footer {
+    background-color: #78290F;
+    color:#FFECD1; 
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5em; 
+}
+
+.footer_info {
+    box-sizing: border-box;
+    max-width: 33%;
+    padding: 1em;
+} 
+
+/*Länk för att gå till produkter*/
+#goToCartLink {
+    color:#15616D; 
+    font-weight: bold;
+    font-size: 1.25em;
 }
