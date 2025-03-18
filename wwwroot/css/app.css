@@ -99,4 +99,35 @@ p, article, li {
     display: flex;
     justify-content: center;
     align-items: center;
+} 
+
+/*Formulär för checkout*/
+form input[type=text], form input[type=email] {
+    width: 65%; 
+    padding: 1em; 
+    border-radius: 15px;
+    border: 1px solid #78290F; 
+    font-size: 0.75em; 
+}
+
+form input[type=text]:focus, form input[type=email]:focus {
+    color: #78290F; 
+}
+
+form select {
+    width: 25%; 
+    padding: 1em; 
+    border-radius: 15px;
+    border: 1px solid #78290F; 
+    font-size: 0.75em; 
+}
+
+#checkoutBtn {
+    background-color: #78290F; 
+    color: #FFECD1; 
+    padding: 0.75em; 
+    border-radius: 15px; 
+    border: none; 
+    font-size: 1em; 
+    cursor: pointer; 
 }

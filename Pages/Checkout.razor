@@ -12,14 +12,14 @@
 }
 
 <h2>Dina uppgifter:</h2>
-<form>
-    <label for="FirstName">Förnamn</label><br>
+<form id="checkoutForm">
+    <label for="FirstName">Förnamn:</label><br>
     <input type="text" id="FirstName" name="FirstName" required><br>
 
-    <label for="LastName">Efternamn</label><br>
+    <label for="LastName">Efternamn:</label><br>
     <input type="text" id="LastName" name="LastName" required><br>
 
-    <label for="Email">E-post</label><br>
+    <label for="Email">E-post:</label><br>
     <input type="email" id="Email" name="Email" required><br>
 
     <label for="Adress">Adress:</label><br>
@@ -31,15 +31,12 @@
     <label for="City">Stad:</label><br>
     <input type="text"><br>
 
-    <label for="payment">Betalningsmetod:</label>
+    <label for="payment">Betalningsmetod:</label><br>
     <select id="payment" name="payment">
         <option value="card">Kort</option>
         <option value="swish">Swish</option>
         <option value="invoice">Faktura</option>
     </select><br>
+</form><br>
 
-
-
-</form>
-
-<a href="/confirmation"><button>Köp</button></a>
+<a href="/confirmation"><button id="checkoutBtn">Köp</button></a>
