@@ -16,6 +16,7 @@
             <li>@item.Name - @item.Price kr</li>
         }
     </ul>
+    <p>Totalt: @CartService.TotalPrice() kr</p>
     <button id="clearBtn" @onclick="ClearCart">Töm varukorgen</button>
     <a href="/checkout"><button id="goToCheckoutBtn">Gå till kassan</button></a>
 }
@@ -25,4 +26,5 @@
     {
         CartService.ClearCart(); 
     }
+
 }

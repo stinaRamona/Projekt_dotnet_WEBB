@@ -19,9 +19,18 @@
     </div>
 }
 <br>
+
+@if(PopupVisible) {
+    <div class="popup">
+        <em>Produkten lades till i varukorgen</em>  <i class="fa-solid fa-xmark" @onclick="closePopup"></i>
+    </div>
+}
+
 <a id="goToCartLink" href="/cartitems">Visa varukorg</a>
 
 @code {
+    bool PopupVisible {get; set; }= false;
+
     [Parameter]
     public int productId { get; set; }
 
@@ -35,6 +44,11 @@
     {
         CartService.AddToCart(product);
         Console.WriteLine($"{product.Name} lades till i kundvagnen.");
+        PopupVisible = true;
+    }
+
+    public void closePopup() {
+        PopupVisible = false;
     }
 
 }

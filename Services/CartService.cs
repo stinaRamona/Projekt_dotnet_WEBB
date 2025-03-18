@@ -22,4 +22,15 @@ public class CartService
     {
         CartItems.Clear(); 
     }
+
+    public int TotalPrice()
+    {
+        int totalPrice = 0; 
+        foreach (var product in CartItems)
+        {
+            totalPrice += product.Price;
+        }
+
+        return totalPrice;
+    }
 }

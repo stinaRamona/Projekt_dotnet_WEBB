@@ -167,3 +167,12 @@ footer {
     font-weight: bold;
     font-size: 1.25em;
 }
+
+.popup {
+    background-color: #15616D;
+    color: #FFECD1;
+    border-radius: 10px;
+    padding: 1em; 
+    width: 100%; 
+    max-width: 300px; 
+}
