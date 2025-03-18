@@ -7,7 +7,6 @@ body {
 main {
     margin: 0 auto;
     max-width: 950px;
-    padding: 1em;
 }
 
 h1, h2 {
@@ -51,6 +50,13 @@ p, article, li {
     text-decoration: none;
 }
 
+/*Headerbild*/
+#header_image_container img {
+    max-width: none; 
+    width: 100%; 
+    
+}
+
 /*för produktsidan*/
 #productContainer {
     display: grid;
@@ -80,4 +86,17 @@ p, article, li {
 
 .nav-link-product:hover {
     text-decoration: underline;
-} 
+}  
+
+/*checkout*/
+#thank_you_img_containter img {
+    max-width: 100%; 
+    width: auto; 
+    height: auto; 
+}
+
+#thank_you_img_containter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
