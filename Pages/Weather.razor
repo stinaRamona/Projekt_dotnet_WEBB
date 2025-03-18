@@ -24,7 +24,7 @@
                             </NavLink>
                             <p>@product.Price kr</p>
                             <p>@product.Description</p>
-                            <p>@product.CategoryModelId</p>
+                            <p>@product.Category</p>
                         </article>
                     
                 }
@@ -51,7 +51,7 @@
 
         public string? ImageName { get; set;}
 
-        public int CategoryModelId { get; set; }
+        public string? Category { get; set; }
 
     }
 }

@@ -1,3 +1,46 @@
+body {
+    background-color: #FFECD1;
+    margin: 0; 
+}
+
+main {
+    margin: 0 auto;
+    max-width: 950px;
+    padding: 1em;
+}
+
+/*navigering*/
+#header_container {
+    background-color: #15616D;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em; 
+}
+
+.navbar-brand {
+    font-size: 2em;
+    color: #FFECD1;
+    text-decoration: none;
+}
+
+.nav {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.nav-item {
+    font-size: 1.5em;
+    padding: 1em; 
+    display: inline;
+}
+
+.nav-link {
+    color: #FFECD1;
+    text-decoration: none;
+}
+
 /*för produktsidan*/
 #productContainer {
     display: grid;
