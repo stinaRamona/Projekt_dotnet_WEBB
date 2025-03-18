@@ -16,8 +16,8 @@
             <li>@item.Name - @item.Price kr</li>
         }
     </ul>
-    <button @onclick="ClearCart">Töm varukorgen</button>
-    <a href="/checkout"><button>Gå till kassan</button></a>
+    <button id="clearBtn" @onclick="ClearCart">Töm varukorgen</button>
+    <a href="/checkout"><button id="goToCheckoutBtn">Gå till kassan</button></a>
 }
 
 @code {

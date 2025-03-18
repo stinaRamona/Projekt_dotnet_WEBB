@@ -122,9 +122,21 @@ form select {
     font-size: 0.75em; 
 }
 
-#checkoutBtn {
+
+/*Knappar för att tömma varukorg och gå till kassa m.m.*/
+#clearBtn, #addToCartBtn, #checkoutBtn {
     background-color: #78290F; 
     color: #FFECD1; 
+    padding: 0.75em; 
+    border-radius: 15px; 
+    border: none; 
+    font-size: 1em; 
+    cursor: pointer; 
+}
+
+#goToCheckoutBtn {
+    background-color: #FF7D00; 
+    color: #001524; 
     padding: 0.75em; 
     border-radius: 15px; 
     border: none; 
