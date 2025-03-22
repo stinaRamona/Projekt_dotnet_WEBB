@@ -103,6 +103,13 @@ p, article, li {
     text-decoration: underline;
 }  
 
+/*För enskild produkt*/
+#singleProductContainer img {
+    max-width: 400px; 
+    width: 100%; 
+    height: auto; 
+}
+
 /*checkout*/
 #thank_you_img_containter img {
     max-width: 100%; 
